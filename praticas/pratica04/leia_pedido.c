@@ -10,7 +10,7 @@ int main(){
   printf("         P E D I D O\n");
   printf("==============================\n");
   printf("Produto\t         Qtd Valor Unit\n");
-  printf("", prod, qtd, valor);
+  printf("", prod, qtd, valor); a
   
   return 0;
 }
