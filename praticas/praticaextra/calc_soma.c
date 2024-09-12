@@ -20,6 +20,6 @@ int main(){
   }
 
   c = a + b;
-  printf("A soma de %i e %i é: %d\n", a,b,c);
+  printf(" %i + %i = %i\n", a,b,c);
   return 0;
 }
