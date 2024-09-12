@@ -14,11 +14,13 @@ int main() {
   printf("%.2f\n", 10.12345678);
   printf("%10.2f\n", 5555.126);
   printf("%3.2f\n", 5555.126); 
+  printf("%03.2f\n", 5555.126); 
+  printf("%13.2f\n", 5555.126); 
  
   //imprime um caractere aspas simples
   printf("%c\n", 'A');
-  printf("%c\n", 12); //imprime de acordo com tabela ASCII8
-  printf("%c\n", 3); //imprime de acordo com tabela ASCII8
+  printf("%c\n", 42); //imprime de acordo com tabela ASCII8
+  printf("%c\n", 123); //imprime de acordo com tabela ASCII8
   printf("%c\n", 66); //imprime de acordo com tabela ASCII8
   printf("%c\n", 68); //imprime de acordo com tabela ASCII8
 
