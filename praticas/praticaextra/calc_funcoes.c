@@ -4,16 +4,19 @@
 
 int main(){
     int deu_certo = 0, repete = 1;
-    char tipo[10], re[1];
+    char tipo[20], re[1];
     float k, x, y, a, b;
     while(deu_certo != 1){
-        printf("Escolha um tipo de funcao entre reta, quadratica, modular, exponencial, reciproca ou raiz: ");
+        printf("Escolha um tipo de funcao entre reta, quadratica, modular, exponencial, reciproca, raiz, raiz cubica, cubica, logaritmo ou exponencial natural: ");
         scanf("%[^\n]s",tipo);
         while(getchar()!='\n');
         if(strcmp(tipo,"reta")==0){
             deu_certo = 1;
         }
         if(strcmp(tipo,"quadratica")==0){
+            deu_certo = 1;
+        }
+        if(strcmp(tipo,"cubica")==0){
             deu_certo = 1;
         }
         if(strcmp(tipo,"modular")==0){
@@ -28,6 +31,16 @@ int main(){
             deu_certo = 0;
         }
         if(strcmp(tipo,"raiz")==0){
+            deu_certo = 1;
+        }
+        if(strcmp(tipo,"raiz cubica")==0){
+            deu_certo = 1;
+        }
+        if(strcmp(tipo,"logaritmo")==0){
+            printf("EM DESENVOLVIMENTO FAVOR AGUARDE\n");
+            deu_certo = 0;
+        }
+        if(strcmp(tipo,"exponencial natural")==0){
             printf("EM DESENVOLVIMENTO FAVOR AGUARDE\n");
             deu_certo = 0;
         }
@@ -36,7 +49,7 @@ int main(){
         }
     }
     int retD = strcmp(tipo, "reta"), quaD = strcmp(tipo,"quadratica"), modD = strcmp(tipo,"modular"), expD = strcmp(tipo,"exponencial");
-    int reciD = strcmp(tipo,"reciproca"), raizD = strcmp(tipo, "raiz");
+    int reciD = strcmp(tipo,"reciproca"), raizD = strcmp(tipo, "raiz"), raizcubD = strcmp(tipo,"raiz cubica"), cubD = strcmp(tipo,"cubica");
     deu_certo = 0;
     while(deu_certo!=1){
         printf("Insira um coeficiente multiplicativo: ");
@@ -76,10 +89,12 @@ int main(){
             if(retD==0){
                 y = (k*x) + b;
                 printf("F(%.2f) = %.2f\n", x, y);
+                printf("reta\n");
             }
             if(quaD==0){
                 y = k*pow(x - a, 2) + b;
                 printf("F(%.2f) = %.2f\n", x, y);
+                printf("qua\n");
             }
             if(modD==0){
                if(x-a<0){
@@ -89,6 +104,22 @@ int main(){
                 y = k*(x-a)+b;
                }
                printf("F(%.2f) = %.2f\n", x, y);
+               printf("mod\n");
+            }
+            if(raizD==0){
+                y = k*sqrt(x-a)+b;
+                printf("F(%.2f) = %.2f\n", x, y);
+                printf("raiz\n");
+            }
+            if(raizcubD==0){
+                y = k*cbrt(x-a)+b;
+                printf("F(%.2f) = %.2f\n", x, y);
+                printf("raizcub\n");
+            }
+            if(cubD==0){
+                y = k*pow(x-a, 3)+b;
+                printf("F(%.2f) = %.2f\n", x, y);
+                printf("cub\n");
             }
         }
         printf("Quer outro valor? (y/n) ");

@@ -5,9 +5,24 @@
 int main(){
     int teste = 0, duracao, check = 0;
     float entrada, rendimento, valor;
-    
+    char tipo[8];
     while(teste!=1){
-        printf("Insira o investimento mensal: ");
+        printf("O investimento rende anualmente ou mensalmente? (anual/mensal): ");
+        scanf("%[^\n]s",tipo);
+        while(getchar()!='\n');
+        if(strcmp(tipo,"anual")==0){
+            teste = 1;
+        }
+        if(strcmp(tipo,"mensal")==0){
+            teste = 1;
+        }
+        if(teste!=1){
+            printf("Tipo de investimento invalido.\n");
+        }
+    }
+    teste = 0;
+    while(teste!=1){
+        printf("Insira o investimento %s: ", tipo);
         teste = scanf("%f",&entrada);
         while(getchar()!='\n');
         if(teste!=1){
@@ -26,18 +41,23 @@ int main(){
     }
     teste = 0;
     while(teste!=1){
-        printf("Insira a duracao do investimento em meses: ");
+        printf("Insira a duracao do investimento %s: ", tipo);
         teste = scanf("%i",&duracao);
         while(getchar()!='\n');
         if(teste!=1){
             printf("Valor Invalido.\n");
         }    
     }
-        printf("A duracao foi de: %i\n", duracao);
+    if(strcmp(tipo,"mensal")==0){
+        printf("A duracao foi de: %i meses\n", duracao);
+    }
+    if(strcmp(tipo,"anual")==0){
+        printf("A duracao foi de: %i anos\n", duracao);
+    }
     teste = 0;  
     valor = entrada; 
     float taxa = (rendimento/100) + 1; 
-    printf("A taxa mensal eh de %.2f\n", taxa);
+    printf("A taxa %s eh de %.2f\n", tipo, taxa);
     while(teste!=duracao){
         if(teste!=duracao){
             valor = valor*taxa + entrada;
