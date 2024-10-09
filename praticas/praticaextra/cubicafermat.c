@@ -3,7 +3,7 @@
 
 int main(){
     int  y, z, k;
-    long int p;
+    unsigned long int p;
     float x, n;
     y = 50;
     while(p!=z){
