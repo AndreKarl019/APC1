@@ -7,8 +7,10 @@ int main(){
     while(getchar()!='\n');
     decimal = numero;
     for(int i=128;i>0; i=i/2 ){
-        int bit = decimal%i;
-        printf("%i ", bit);
+        int bit = decimal/i;
+        if(bit==0||bit==1){
+            printf("%i ", bit);
+        }else{printf("Numero Invalido! ");break;}
         decimal = decimal - bit*i;
     }
 
